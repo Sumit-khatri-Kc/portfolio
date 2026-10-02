@@ -1,0 +1,287 @@
+/* Sumit Khatri Personal Portfolio
+   External stylesheet for responsive presentation.
+*/
+
+:root {
+    --primary: #0f2744;
+    --secondary: #1a6b8a;
+    --accent: #f0a500;
+    --background: #f0f4f8;
+    --surface: #ffffff;
+    --text: #1a2332;
+    --muted: #5a6b7d;
+    --border: #d0dce8;
+    --shadow: 0 8px 24px rgba(15, 39, 68, 0.09);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--background);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+.site-header {
+    background: var(--primary);
+    color: #ffffff;
+    padding: 3rem 0 2rem;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    letter-spacing: 0.02em;
+}
+
+.tagline {
+    margin: 0.35rem 0 1.5rem;
+    color: #c8dce8;
+    font-size: 1.1rem;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list a {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.55rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+    background: var(--accent);
+    color: var(--primary);
+    outline: none;
+}
+
+main {
+    padding: 2rem 0 3rem;
+}
+
+.section-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: clamp(1.25rem, 3vw, 2.2rem);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.section-card h2 {
+    margin-top: 0;
+    color: var(--primary);
+    font-size: 1.8rem;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 2rem;
+    align-items: center;
+}
+
+.profile-area {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-image {
+    width: 220px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 50%;
+    border: 6px solid #dce8f0;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 0;
+}
+
+.skills-grid > div {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem;
+    background: #f5f8fb;
+}
+
+.skills-grid dt {
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 0.3rem;
+}
+
+.skills-grid dd {
+    margin: 0;
+    color: var(--muted);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.project-card {
+    border-left: 4px solid var(--accent);
+    background: #f5f8fb;
+    border-radius: 10px;
+    padding: 1.25rem;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
+.project-link {
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+    color: var(--primary);
+}
+
+.contact-form {
+    max-width: 700px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    border: 1px solid #a8b8c8;
+    border-radius: 8px;
+    padding: 0.8rem;
+    font: inherit;
+    color: var(--text);
+    background: #ffffff;
+}
+
+input:focus,
+textarea:focus {
+    outline: 3px solid rgba(26, 107, 138, 0.25);
+    border-color: var(--secondary);
+}
+
+button {
+    border: 0;
+    border-radius: 8px;
+    padding: 0.8rem 1.4rem;
+    background: var(--primary);
+    color: #ffffff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover,
+button:focus-visible {
+    background: var(--secondary);
+}
+
+.site-footer {
+    background: var(--primary);
+    color: #c8dce8;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Tablet layout */
+@media (max-width: 800px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-area {
+        order: -1;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 560px) {
+    .site-header {
+        padding: 2rem 0 1.5rem;
+    }
+
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .nav-list a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-card {
+        padding: 1.1rem;
+    }
+}
